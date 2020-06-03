@@ -17,3 +17,13 @@ const add = (a, b) => a + b;
 const addOne = a => a + 1;
 
 console.log(addOne(1));
+
+const person = {
+    name: 'Max',
+    age: 29,
+    greet() {
+        console.log('Hi, I am ' + this.name);
+    }
+};
+
+person.greet();
