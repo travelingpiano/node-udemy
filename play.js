@@ -27,3 +27,23 @@ const person = {
 };
 
 person.greet();
+
+const hobbies = ['Sports', 'Cooking', 1]; // arrays can be of multiple different types
+
+for (let hobby of hobbies) {
+    console.log(hobby);
+}
+
+const copiedArray = [...hobbies];
+hobbies.push('Sleeping');
+console.log(copiedArray);
+
+// destructuring
+const printName = ({ age }) => {
+    console.log(age);
+}
+
+printName(person);
+
+const { age1, name1 } = person;
+console.log(age1, name1);
