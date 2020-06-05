@@ -47,3 +47,5 @@ printName(person);
 
 const { age1, name1 } = person;
 console.log(age1, name1);
+
+console.log(`My name is ${name} and my age is ${age}`);
