@@ -20,15 +20,16 @@ function rqListener(req, res) {
             body.push(chunk);
         });
         // when all data has been read
-        req.on('end', () => {
+        return req.on('end', () => {
             const parsedBody = Buffer.concat(body).toString();
             console.log(parsedBody);
-            fs.writeFileSync('message.txt', parsedBody);
+            // writeFile is the async (i.e. the execution and callback will be done later) vs writeFileSync which does it right away
+            fs.writeFile('message.txt', parsedBody, (err) => {
+                res.statusCode = 302;
+                res.setHeader('Location', '/');
+                return res.end();
+            });
         });
-
-        res.statusCode = 302;
-        res.setHeader('Location', '/');
-        return res.end();
     }
     // console.log(req);
     res.setHeader('Content-Type', 'text/html');
