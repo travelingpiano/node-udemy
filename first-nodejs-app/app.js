@@ -13,12 +13,24 @@ function rqListener(req, res) {
         return;
     }
     if (url === '/message' && method === 'POST') {
-        fs.writeFileSync('message.txt', 'DUMMY');
+        // listen to data event, like a buffer/"bus stop" to read data
+        const body = [];
+        req.on('data', (chunk) => {
+            console.log(chunk);
+            body.push(chunk);
+        });
+        // when all data has been read
+        req.on('end', () => {
+            const parsedBody = Buffer.concat(body).toString();
+            console.log(parsedBody);
+            fs.writeFileSync('message.txt', parsedBody);
+        });
+
         res.statusCode = 302;
         res.setHeader('Location', '/');
         return res.end();
     }
-    console.log(req);
+    // console.log(req);
     res.setHeader('Content-Type', 'text/html');
     // write allows us to write some data to the response
     res.write('<html>');
