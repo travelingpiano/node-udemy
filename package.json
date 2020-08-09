@@ -1,0 +1,23 @@
+{
+  "name": "udemy",
+  "version": "1.0.0",
+  "description": "NodeJS Project",
+  "main": "async.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node first-nodejs-app/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/travelingpiano/node-udemy.git"
+  },
+  "author": "Li Hsuan Lu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/travelingpiano/node-udemy/issues"
+  },
+  "homepage": "https://github.com/travelingpiano/node-udemy#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
