@@ -3,14 +3,16 @@ const fs = require('fs');
 const requestHandler = (req, res) => {
     const url = req.url;
     const method = req.method;
+    console.log(url);
     if (url === '/') {
         res.write('<html>');
         res.write('<head><title>Enter Message</title></head>');
-        res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Send</button></form></body>');
+        res.write('<body><form action="/message" method="POST"><input type="text" name="message"><button type="submit">Sending</button></form></body>');
         res.write('</html>');
         res.end();
         return;
     }
+
     if (url === '/message' && method === 'POST') {
         // listen to data event, like a buffer/"bus stop" to read data
         const body = [];
