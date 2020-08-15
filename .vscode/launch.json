@@ -11,9 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}/express/app.js",
-            "restart": true,
-            "runtimeExecutable": "nodemon"
+            "program": "${workspaceFolder}/assignment-2/app.js",
         }
     ]
 }
