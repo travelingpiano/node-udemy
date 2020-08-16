@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const rootDir = require('../util/path');
 
 const router = express.Router();
 
@@ -7,7 +8,7 @@ const router = express.Router();
 // should either call next or return response
 router.use('/add-product', (req, res, next) => {
     console.log('Adding some products');
-    res.sendFile(path.join(__dirname, '../', 'views', 'add-product.html'));
+    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
 });
 
 // the next is technically optional
