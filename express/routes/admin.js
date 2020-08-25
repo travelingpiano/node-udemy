@@ -10,7 +10,7 @@ const products = [];
 // should either call next or return response
 router.get('/add-product', (req, res, next) => {
     console.log('Adding some products');
-    res.sendFile(path.join(rootDir, 'views', 'add-product.html'));
+    res.render('add-product', {pageTitle: "Adding a product"})
 });
 
 // the next is technically optional
