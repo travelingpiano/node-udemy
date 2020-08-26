@@ -3,10 +3,12 @@ const bodyParser = require('body-parser');
 const adminData = require('./routes/admin');
 const userRouter = require('./routes/shop');
 const path = require('path');
+const expressHbs = require('express-handlebars');
 
 const app = express();
 
-app.set('view engine', 'pug');
+app.engine('handlebars', expressHbs({layoutsDir: 'express/views/layouts/', defaultLayout: 'main-layout'}));
+app.set('view engine', 'handlebars');
 app.set('views', 'express/views');
 
 app.use(bodyParser.urlencoded({extended: false}));

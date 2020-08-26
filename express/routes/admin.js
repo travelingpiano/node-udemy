@@ -10,7 +10,13 @@ const products = [];
 // should either call next or return response
 router.get('/add-product', (req, res, next) => {
     console.log('Adding some products');
-    res.render('add-product', {pageTitle: "Adding a new book", path: '/admin/add-product'})
+    res.render('add-product', {
+        pageTitle: "Adding a new book", 
+        path: '/admin/add-product',
+        formsCSS: true,
+        productCSS: true,
+        activeAddProduct: true
+    })
 });
 
 // the next is technically optional
