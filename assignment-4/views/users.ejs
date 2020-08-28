@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Users</title>
-</head>
-<body>
+<%- include('includes/head.ejs') %>
     <%- include('includes/nav.ejs') %>
 
     <% if (users.length > 0) { %>
+        <h1>List of users</h1>
         <ul>
             <% for(let user of users) { %>
                 <li><%= user %></li>

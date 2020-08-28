@@ -5,7 +5,7 @@ const router = express.Router();
 const users = [];
 
 router.get('/', (req, res) => {
-    res.render('add-user');
+    res.render('add-user', {pageTitle: 'Add User', path: '/'});
 });
 
 router.post('/add-user', (req, res) => {
